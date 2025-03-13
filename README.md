@@ -6,3 +6,4 @@ Will include:
 - API that shows different names on presents
 - Spinning wheel in the back (or just on the cart)
 - Window showing that it's snowing outside
+- Drawn assets (including transforming present due to jankiness)
