@@ -41,12 +41,12 @@ switch(x){
 
   case 2:
     present2.style.order=numberpicked;
-    present2.style.width="25%";
+    present2.style.width="10%";
     present2.style.height="40%";
 
   case 3:
     present3.style.order=numberpicked;
-    present3.style.width="10%";
+    present3.style.width="4%";
     present3.style.height="100%";
 
   case 4:
@@ -59,4 +59,32 @@ switch(x){
   slotsfilled[x-1]=numberpicked;
 }
 
+}
+
+
+var boxincart = document.getElementById("boxincart");
+boxincart.addEventListener("animationstart",startanimation)
+boxincart.addEventListener("animationiteration",startanimation)
+
+
+function startanimation(){
+  boxincart.innerHTML = "";
+  boxincart.style.backgroundColor="#ad7547";
+  boxincart.style.left="30%";
+  boxincart.style.top="-55";
+  boxincart.style.transform="translateX(0%)";
+
+  //console.log("does thiw reafh?");
+  let transform2 = setTimeout(transformtopresent,1900);
+}
+
+function transformtopresent(){
+  console.log("TRANSFORM!");
+  //boxincart.style.background="rgba(0,0,0,0)";
+  boxincart.innerHTML = "&#x1F381";
+   boxincart.style.fontSize="500%";
+  boxincart.style.top="-100";
+  boxincart.style.right="0";
+  boxincart.style.transform="translateX(-25%)";
+  //document.getElementById("cart").style.textAlign="right";
 }
