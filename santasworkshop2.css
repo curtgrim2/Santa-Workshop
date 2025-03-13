@@ -5,17 +5,7 @@ body{
 #perspect{
   transform:perspective(500px);
 }
-.conveyorbelt{
-/*  width:max-content; */
-  width:100vw;
-  height:5%;
-  background-color: grey;
-  position: absolute;
-  margin:0 auto;
-  z-index:4;
-  /* Create a 3D perspective */
-  /*transform: perspective(50px) rotateX(15deg);*/
-}
+
 
 
 #countercontainer{
@@ -34,35 +24,38 @@ body{
 
 }
 
-#tube{
-  z-index:3;
-  position: absolute;
-  right:0;
-  width:15%;
-  height:99%;
-  /*opacity: .5;
-  background-color: black;*/
-  background:rgba(0,0,0,.4);
-}
+
 
 @keyframes movingpresents{
-  50%{
-    transform:translatex(-100%);
-  }
+
   100%{
     transform:translatex(-100%);
 
   }
 }
+
+.conveyorbelt{
+/*  width:max-content; */
+position: absolute;
+left:0;
+  width:100vw;
+  height:5%;
+  background-color: grey;
+  position: absolute;
+  margin:0 auto;
+  z-index:4;
+  /* Create a 3D perspective */
+  /*transform: perspective(50px) rotateX(15deg);*/
+}
 #groupofpresents{
   display:flex;
   right:0;
   height:20%;
-  width:100%;
+  width:200%;
   justify-content:flex-end;
   align-items: flex-end;
   z-index:4;
-  animation: linear 5s movingpresents infinite;
+  animation: linear 7s movingpresents infinite;
   position:relative;
 
 }
@@ -70,7 +63,7 @@ body{
 #groupofpresents div{
   background-color: #ad7547;
   color: white;
-  width: 15%;
+  width: 5%;
   height:70%;
   margin: 0 10px;
   text-align: center;
@@ -127,7 +120,7 @@ body{
 
 .metal{
   width:20%;
-  height:15%;
+  height:10%;
   background-color: grey;
   z-index:4;
   position: absolute;
@@ -135,8 +128,83 @@ body{
   right:-2.5%;
 }
 
+#tube{
+  z-index:3;
+  position: absolute;
+  right:0;
+  width:15%;
+  height:85%;
+  /*opacity: .5;
+  background-color: black;*/
+  background:rgba(0,0,0,.4);
+}
+
 .metal[data-type="bottom"]{
   width:20%;
-  top:85%;
+  top:72%;
   height:20%;
+}
+
+#cart{
+  width:14%;
+  height:10%;
+  background-color:brown;
+  position: absolute;
+  top:55%;
+  left:-14%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation:linear infinite 5s movingcart;
+}
+
+#boxincart{
+  background-color: #ad7547;
+  width:40%;
+  height:80%;
+  position: absolute;
+  top:-80%;
+  left:30%;
+  animation: infinite linear 5s transformpresent;
+}
+
+@keyframes transformpresent{
+  20%{
+    background-color: #ad7547;
+    box-shadow:0px 0px 0px 0px black;
+  }
+  25%{
+    background-color: white;
+    box-shadow: 0px 0px 10px 20px white;
+  }
+  39%{
+      background: rgba(0,0,0,0);
+      box-shadow:0px 0px 0px 0px blue;
+  }
+  100%{ /*Keeps backgroundcolor transparent*/
+    background: rgba(0,0,0,0);
+    box-shadow:0px 0px 0px 0px blue;
+  }
+}
+
+@keyframes movingcart{
+/*0%{
+  transform:translateX(-200%);
+}*/
+10%{
+  left:-14%;
+
+}
+20%{
+left:10%
+}
+
+
+40%{
+left:10%;
+}
+
+100%{
+left:99%;
+}
 }
