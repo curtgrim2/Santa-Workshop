@@ -1,0 +1,142 @@
+body{
+  background-color:darkblue;
+  overflow-x:hidden;
+}
+#perspect{
+  transform:perspective(500px);
+}
+.conveyorbelt{
+/*  width:max-content; */
+  width:100vw;
+  height:5%;
+  background-color: grey;
+  position: absolute;
+  margin:0 auto;
+  z-index:4;
+  /* Create a 3D perspective */
+  /*transform: perspective(50px) rotateX(15deg);*/
+}
+
+
+#countercontainer{
+  border:4px dashed red;
+  color:green;
+  background-color: white;
+  font-size:3vw;
+  position:fixed;
+  bottom:0;
+}
+
+#present1,#present2,#present3,#present4{
+  z-index:4;
+  position:relative;
+  /*Need relative so that when animation starts, z-index stays infront of the tube */
+
+}
+
+#tube{
+  z-index:3;
+  position: absolute;
+  right:0;
+  width:15%;
+  height:99%;
+  /*opacity: .5;
+  background-color: black;*/
+  background:rgba(0,0,0,.4);
+}
+
+@keyframes movingpresents{
+  50%{
+    transform:translatex(-100%);
+  }
+  100%{
+    transform:translatex(-100%);
+
+  }
+}
+#groupofpresents{
+  display:flex;
+  right:0;
+  height:20%;
+  width:100%;
+  justify-content:flex-end;
+  align-items: flex-end;
+  z-index:4;
+  animation: linear 5s movingpresents infinite;
+  position:relative;
+
+}
+
+#groupofpresents div{
+  background-color: #ad7547;
+  color: white;
+  width: 15%;
+  height:70%;
+  margin: 0 10px;
+  text-align: center;
+  font-size: 30px;
+  border:.1px black solid;
+  line-height:100px;
+
+}
+
+
+#fallingpresent{
+  z-index: 2;
+  background-color: #ad7547;
+  width: 60%;
+  height: 10%;
+  line-height: 50px;
+  font-size: 1vw;
+  text-align: center;
+  animation: presentfalling 1.8s linear infinite, presentbouncing 1.8s alternate infinite;
+  position: absolute;
+}
+
+@keyframes presentfalling {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50%{
+    transform: translateY(450%) rotate(180deg);
+
+  }
+  100% {
+    transform: translateY(900%) rotate(-90deg); /* Spins multiple times while falling */
+  }
+}
+
+@keyframes presentbouncing {
+  from {
+    left: 0;
+  }
+  to {
+    left: 35%;
+  }
+}
+
+
+@keyframes rotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(45deg)
+  }
+}
+
+.metal{
+  width:20%;
+  height:15%;
+  background-color: grey;
+  z-index:4;
+  position: absolute;
+  top:0;
+  right:-2.5%;
+}
+
+.metal[data-type="bottom"]{
+  width:20%;
+  top:85%;
+  height:20%;
+}
