@@ -1,14 +1,62 @@
 var christmasdate = new Date("2024-12-26"); //Putting 2024-12-25 makes the variable do a day after
 //var christmasdate = new Date("December 25, 2020");
-var currentdate = new Date();
-var currentmonth = currentdate.getMonth() + 1;
-var currentday = currentdate.getDate() + 1;
+let timer = setInterval(clock,1000);
 
-christmasdate.setFullYear(currentdate.getFullYear());
-console.log(currentmonth);
-document.getElementById("christmascounter").innerHTML=  (12 - currentmonth) +" months, " + (25 - currentday + 1) + " days";
+function clock(){
+  var currentdate = new Date();
+  var currentmonth = currentdate.getMonth() + 1;
+  var currentday = currentdate.getDate() + 1;
+  var currenthour = currentdate.getHours()+1;
+  var currentminutes = currentdate.getMinutes()+1;
+  var currentseconds = currentdate.getSeconds()+1;
 
 
+  christmasdate.setFullYear(currentdate.getFullYear());
+
+/*  var displaymonth =(12 - currentmonth) +" months, ";
+  var displaydays= (25 - currentday ) + " days, ";
+  var displayhours= (24- currenthour) + " hours, ";
+  var displaymins= (60-currentminutes) + " minutes, ";
+  var  displaysecs = (60-currentseconds)+" seconds";*/
+
+  if((12 - currentmonth)==1){
+    document.getElementById("monthsaway").innerHTML = (12 - currentmonth) +" month, ";
+  }
+  else{
+    document.getElementById("monthsaway").innerHTML = (12 - currentmonth) +" months, ";
+  }
+
+if((25 - currentday )==1){
+  document.getElementById("daysaway").innerHTML = (25 - currentday ) + " day, ";
+
+}
+else{
+  document.getElementById("daysaway").innerHTML = (25 - currentday ) + " days, ";
+
+}
+
+if((24- currenthour)==1){
+  document.getElementById("hoursaway").innerHTML = (24- currenthour) + " hour, ";
+}
+else{
+  document.getElementById("hoursaway").innerHTML = (24- currenthour) + " hours, ";
+}
+
+  if((60-currentminutes)==1){
+    document.getElementById("minutesaway").innerHTML = (60-currentminutes) + " minute, ";
+  }
+  else{
+    document.getElementById("minutesaway").innerHTML = (60-currentminutes) + " minutes, ";
+  }
+
+  if((60-currentseconds)==1){
+    document.getElementById("secondsaway").innerHTML = (60-currentseconds)+" second";
+  }
+  else{
+    document.getElementById("secondsaway").innerHTML = (60-currentseconds)+" seconds";
+  }
+  //document.getElementById("christmascounter").innerHTML= displaymonth  + displaydays + displayhours + displaymins + displaysecs;
+}
 
 
 var present1 = document.getElementById("present1");
@@ -79,7 +127,6 @@ function startanimation(){
 }
 
 function transformtopresent(){
-  console.log("TRANSFORM!");
   //boxincart.style.background="rgba(0,0,0,0)";
   boxincart.innerHTML = "&#x1F381";
    boxincart.style.fontSize="500%";
