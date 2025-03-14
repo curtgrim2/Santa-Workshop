@@ -1,6 +1,6 @@
 body{
-  background-color:darkblue;
-  overflow-x:hidden;
+  background-color:#d6e6ff;
+  overflow:hidden;
 }
 #perspect{
   transform:perspective(500px);
@@ -9,12 +9,19 @@ body{
 
 
 #countercontainer{
-  border:4px dashed red;
-  color:green;
-  background-color: white;
+  border:4px double #694136;
+  color:red;
+  background: rgba(0,0,0,.9);
   font-size:3vw;
-  position:fixed;
-  bottom:0;
+ position:relative;
+ top:10%;
+  left:30%;
+  text-align:center;
+  z-index:5;
+  width:35%;
+  /*display: flex;
+  justify-content: center;
+  align-content:center;*/
 }
 
 #present1,#present2,#present3,#present4{
@@ -38,7 +45,7 @@ body{
 /*  width:max-content; */
 position: absolute;
 left:0;
-  width:100vw;
+  width:120vw;
   height:5%;
   background-color: grey;
   position: absolute;
@@ -104,7 +111,7 @@ left:0;
     left: 0;
   }
   to {
-    left: 35%;
+    left: 42%;
   }
 }
 
@@ -207,4 +214,32 @@ left:10%;
 100%{
 left:99%;
 }
+}
+#christmascounter{
+  color:green;
+}
+
+#monthsaway{
+color:green;
+}
+#daysaway{
+  color:green;
+}
+#weeksaway{
+  color:green;
+}
+#hoursaway{
+  color:green;
+}
+#minutesaway{
+  color:green;
+}
+#secondsaway{
+  color:green;
+}
+
+#floor{
+  background: white;
+  height:100%;
+  width:120%;
 }
