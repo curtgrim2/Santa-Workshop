@@ -1,7 +1,54 @@
 var christmasdate = new Date("2024-12-26"); //Putting 2024-12-25 makes the variable do a day after
 //var christmasdate = new Date("December 25, 2020");
-let timer = setInterval(clock,1000);
 
+/*
+fetch('https://restcountries.com/v3.1/all')
+.then(response=>response.json())
+.then(data=>console.log(data) )
+.catch(error=> console.error('Error:',error))
+*/
+
+var allcountries;
+//getcountries();
+ async function getcountries(whichpresent){
+  try{
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    const data  = await response.json();
+    var pickcountry = Math.floor(Math.random()*250);
+    var countryname=data[pickcountry].name.common;
+    //console.log(countryname);
+    document.getElementById(whichpresent).innerHTML=countryname;
+    return countryname;
+
+  }
+  catch(error){
+    console.error("Error:",error);
+  }
+}
+
+async function getnames(){
+  try{
+    const response = await fetch('https://randomuser.me/api/');
+    const data = await response.json();
+    console.log(data.results[0].name.first);
+    document.getElementById('fallingpresent').innerHTML = data.results[0].name.first + " " + data.results[0].name.last;
+    fallingpresent.style.animationPlayState="running";
+  }
+  catch(error){
+    console.error("Error:",error);
+  }
+}
+
+/*
+const getdata = async () => {
+  const data2 = await getcountries();
+  console.log(data2);
+  var allcountries=data2;
+};*/
+//const allcountries = await getcountries();
+//console.log(allcountries);
+
+let timer = setInterval(clock,1000);
 function clock(){
   var currentdate = new Date();
   var currentmonth = currentdate.getMonth() + 1;
@@ -58,6 +105,23 @@ else{
   //document.getElementById("christmascounter").innerHTML= displaymonth  + displaydays + displayhours + displaymins + displaysecs;
 }
 
+var fallingpresent = document.getElementById("fallingpresent");
+fallingpresent.addEventListener("animationiteration",presentforperson);
+//fallingpresent.addEventListener("animationstart",play);
+var pauseanimation2 = setInterval(getnames,9000);
+
+function presentforperson(){
+  clearInterval(pauseanimation2);
+  fallingpresent.style.animationPlayState="paused";
+  pauseanimation2 = setInterval(getnames,7200);
+   console.log("An animation is about to play in 7.2 seconds");
+   //getnames();
+}
+function play (){
+  fallingpresent.style.animationPlayState= "running";
+  //let pauseanimation2 = setInterval(getnames,9000);
+}
+
 
 var present1 = document.getElementById("present1");
 var present2 = document.getElementById("present2");
@@ -86,19 +150,24 @@ for(var y=0;y<slotsfilled.length; y++){
 switch(x){
   case 1:
     present1.style.order=numberpicked;
+    present1.innerHTML=getcountries("present1");
 
   case 2:
     present2.style.order=numberpicked;
     present2.style.width="10%";
     present2.style.height="40%";
+    present2.innerHTML=getcountries("present2");
 
   case 3:
     present3.style.order=numberpicked;
     present3.style.width="4%";
     present3.style.height="100%";
+    present3.innerHTML=getcountries("present3");
 
   case 4:
     present4.style.order=numberpicked;
+    present4.innerHTML=getcountries("present4");
+
     /*present4.style.width="50%";
     present4.style.height="100%";*/
 
