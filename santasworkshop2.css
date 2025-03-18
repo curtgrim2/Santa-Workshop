@@ -6,7 +6,48 @@ body{
   transform:perspective(500px);
 }
 
+#window{
+  border:3px solid black;
+  width:25%;
+  height:25%;
+  position: absolute;
+  /*background: rgba(0,0,255,.5);*/
+   overflow: hidden;
 
+}
+#snowhills{
+  z-index:3;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position: relative;
+  top:0;
+  opacity:.5;
+
+}
+.thesnow{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:2;
+  display:block;
+  position:relative;
+  bottom:200%;
+  animation:linear infinite 5s snowfalling;
+}
+@keyframes snowfalling{
+  100%{
+    transform:translateY(100%);
+  }
+}
+
+#outside{
+  width:100%;
+  height:100%;
+  background-color: black;
+  position: absolute;
+  z-index:1;
+}
 
 #countercontainer{
   border:4px double #694136;
@@ -41,6 +82,14 @@ body{
   }
 }
 
+#conveyorwheels{
+  border-top:10px dotted black;
+  position: relative;
+  top:1%;
+  z-index:4;
+
+}
+
 .conveyorbelt{
 /*  width:max-content; */
 position: absolute;
@@ -51,6 +100,7 @@ left:0;
   position: absolute;
   margin:0 auto;
   z-index:4;
+  border:1px solid black;
   /* Create a 3D perspective */
   /*transform: perspective(50px) rotateX(15deg);*/
 }
@@ -64,6 +114,7 @@ left:0;
   z-index:4;
   animation: linear 7s movingpresents infinite;
   position:relative;
+  bottom:-5;
 
 }
 
@@ -74,9 +125,8 @@ left:0;
   height:70%;
   margin: 0 10px;
   text-align: center;
-  font-size: 30px;
+  font-size:1.5vw;
   border:.1px black solid;
-  line-height:100px;
 
 }
 
@@ -163,6 +213,43 @@ left:0;
   justify-content: center;
   align-items: flex-end;
   animation:linear infinite 5s movingcart;
+}
+
+.cartwheels{
+  background-color: black;
+  border-radius:50%;
+  width:2vw;
+  height:2vw;
+  color:white;
+  text-align:center;
+  animation:linear infinite 5s rollingwheels;
+  position: absolute;
+  bottom:-10;
+}
+
+.cartwheels[data-type="left"]{
+  left:0;
+}
+.cartwheels[data-type="right"]{
+  right:0;
+}
+
+@keyframes rollingwheels{
+  19%{
+    transform: rotate(180deg);
+  }
+  20%{
+    transform: rotate(180deg);
+
+  }
+  41%{
+    transform: rotate(180deg);
+
+  }
+  100%{
+    transform: rotate(900deg);
+
+  }
 }
 
 #boxincart{
