@@ -15,3 +15,10 @@ Will include:
     - Christmas
     - Thanksgiving
     - Veterans Day? 4th of July? Should American holidays be included?
+ 
+## Developer Notes:
+- Check for resizing adjuments with all the elements by applying position absolute and their vertical positioning
+- Fix fallingpresent issues with resizing
+      - Box peeks out early
+-Fallingpresents sometimes freezes mid air so timing can be improved
+
