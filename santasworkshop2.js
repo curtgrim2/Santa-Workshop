@@ -154,14 +154,18 @@ switch(x){
 
   case 2:
     present2.style.order=numberpicked;
-    present2.style.width="10%";
-    present2.style.height="40%";
+    //present2.style.width="10%";
+    //present2.style.height="40%";
+    present2.style.width="27vw";
+    present2.style.height="10vh";
     present2.innerHTML=getcountries("present2");
 
   case 3:
     present3.style.order=numberpicked;
-    present3.style.width="4%";
-    present3.style.height="100%";
+    //present3.style.width="4%";
+    //present3.style.height="100%";
+    present3.style.width="5vw";
+    present3.style.height="22vh";
     present3.innerHTML=getcountries("present3");
 
   case 4:
@@ -203,4 +207,40 @@ function transformtopresent(){
   boxincart.style.right="0";
   boxincart.style.transform="translateX(-25%)";
   //document.getElementById("cart").style.textAlign="right";
+}
+
+
+//Holiday Changes
+
+newyears();
+
+function halloween(){
+  var body = document.querySelector("body");
+  var holidaymessage=document.getElementById("holidaymention");
+  holidaymention.innerHTML= "HAPPY HALLOWEEN";
+  body.style.backgroundColor="#c23802";
+
+  //Make it snow blood/black soot
+  //Have box tranform into skull/candy
+  //Cart wheels turn into eyeballs
+}
+
+function stpatricks(){
+  var body = document.querySelector("body");
+  var holidaymessage=document.getElementById("holidaymention");
+  holidaymention.innerHTML="Happy St Patrick's Day"
+  body.style.backgroundColor="green";
+  //Rainbow outside?
+}
+
+function aprilfools(){
+//Change box api's to fictional character names and fictional places
+//Cart wheels turn into clown noses?
+}
+
+function newyears(){
+  var body = document.querySelector("body");
+  var holidaymessage=document.getElementById("holidaymention");
+  holidaymention.innerHTML= "Happy New Years!";
+  body.style.backgroundColor="#ad99bf";
 }
