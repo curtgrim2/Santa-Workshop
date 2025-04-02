@@ -1,6 +1,10 @@
 body{
   background-color:#d6e6ff;
   overflow:hidden;
+  width:1024px;
+  height:768px;
+  margin:0;
+  padding:0;
 }
 #perspect{
   transform:perspective(500px);
@@ -51,18 +55,27 @@ body{
 
 #countercontainer{
   border:4px double #694136;
-  color:red;
-  background: rgba(0,0,0,.9);
-  font-size:3vw;
- position:relative;
- top:10%;
+  color:white;
+  background: rgba(0,0,0,1);
+  font-size:2.7vh;
+ /*position:relative;
+ top:5%;
+  left:40%;*/
+  position:absolute;
+  top:30%;
   left:30%;
-  text-align:center;
-  z-index:5;
-  width:35%;
+  width:35vw;
+  z-index:1;
+  padding:1% 0;
   /*display: flex;
   justify-content: center;
   align-content:center;*/
+  text-align: center;
+}
+
+
+#holidaymention{
+  text-decoration: underline;
 }
 
 #present1,#present2,#present3,#present4{
@@ -84,8 +97,11 @@ body{
 
 #conveyorwheels{
   border-top:10px dotted black;
-  position: relative;
-  top:1%;
+  /*position: relative;
+  top:1%;*/
+  position:absolute;
+  top:24%;
+  width:200%;
   z-index:4;
 
 }
@@ -94,35 +110,42 @@ body{
 /*  width:max-content; */
 position: absolute;
 left:0;
+top:24.5%;
   width:120vw;
   height:5%;
   background-color: grey;
-  position: absolute;
   margin:0 auto;
-  z-index:4;
+  z-index:5;
   border:1px solid black;
+
+
   /* Create a 3D perspective */
   /*transform: perspective(50px) rotateX(15deg);*/
 }
 #groupofpresents{
   display:flex;
-  right:0;
+  right:-70%;
   height:20%;
   width:200%;
   justify-content:flex-end;
   align-items: flex-end;
   z-index:4;
-  animation: linear 7s movingpresents infinite;
-  position:relative;
-  bottom:-5;
+  animation: linear 7.5s movingpresents infinite;
+
+  /*position:relative;
+  bottom:-5;*/
+  position: absolute;
+  top:4%;
 
 }
 
 #groupofpresents div{
   background-color: #ad7547;
   color: white;
-  width: 5%;
-  height:70%;
+  /*width: 5%;
+  height:70%;*/
+  width:10vw;
+  height:15vh;
   margin: 0 10px;
   text-align: center;
   font-size:1.5vw;
@@ -213,6 +236,7 @@ left:0;
   justify-content: center;
   align-items: flex-end;
   animation:linear infinite 5s movingcart;
+  z-index:2;
 }
 
 .cartwheels{
@@ -225,6 +249,7 @@ left:0;
   animation:linear infinite 5s rollingwheels;
   position: absolute;
   bottom:-10;
+  font-size:50%;
 }
 
 .cartwheels[data-type="left"]{
@@ -327,6 +352,9 @@ color:green;
 
 #floor{
   background: white;
-  height:100%;
+  position: absolute;
+  bottom:0;
+  height:40vh;
   width:120%;
+  z-index:1;
 }
